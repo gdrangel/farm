@@ -1,0 +1,192 @@
+/* -------------------- IMPORTED FONTS -------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Habibi&family=Irish+Grover&display=swap');
+/*-------------------- CSS REST ---------------------------------------------------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p, li {
+    font-family: 'Habibi', serif;
+}
+
+h1, h2, h3{
+    font-family: 'Irish Grover', serif;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3, p, a, .text {
+    font-size: 1.25em;
+}
+
+h3 {
+    text-align: center;
+}
+
+header h1, header p, .bottom {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+header p {
+    font-style: italic;
+    padding: 15px 15px;
+}
+
+footer {
+    color: var(--green);
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--orange);
+    color: var(--white);
+    text-decoration: none;
+    border: 2px solid var(--white);
+}
+
+nav ul li:not(:last-child) a {
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+nav ul li:last-child { 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin: 0;
+    z-index: 5;
+}
+
+.fruits, .vegetables {
+    padding: 20px;
+}
+
+.fpics, .vpics, .bottom {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.image {
+    position: relative;
+    display: inline-block;
+}
+
+.image img {
+    display: block;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    color: var(--white);
+}
+
+/* -------------------- ROOT VARIABLES --------------------------------------- */
+:root {
+    --green: #06A816;
+    --orange: #E75D02;
+    --black: #000000;
+    --white: #ffffff;
+}
+/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+@media screen and (min-width: 428px) {
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 27px;
+    }
+
+    .fpics, .vpics, .bottom {
+        grid-template-columns: 1fr;
+    }
+
+}
+/*-------------------- MEDIA QUERY (medium) --------------------------------*/
+@media screen and (min-width: 834px) {
+
+    nav ul {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fpics, .vpics, .bottom {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+/*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media screen and (min-width: 1280px) {
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header nav {
+        background-color: var(--green);
+    }
+
+    header h1, header p {
+        justify-content: left;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .fpics, .vpics {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .bottom {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+}
+/*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media screen and (min-width: 1440px) {
+
+    .fpics, .vpics {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+}
